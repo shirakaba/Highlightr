@@ -2,7 +2,7 @@ import { Observable } from "tns-core-modules/data/observable";
 import { TextField } from "tns-core-modules/ui/text-field";
 import { TextView } from "tns-core-modules/ui/text-view";
 // import { Highlightr } from "nativescript-syntax-highlighter/typings/objc!Highlightr.d.ts";
-import { SyntaxHighlighter } from "nativescript-syntax-highlighter/index.ios.d.ts";
+import { SyntaxHighlighter } from "nativescript-syntax-highlighter/syntaxhighlighter.ios.ts";
 
 export class HelloWorldModel extends Observable {
     // private highlightr: Highlightr = Highlightr.alloc().init();
@@ -21,6 +21,7 @@ export class HelloWorldModel extends Observable {
             case "tv":
                 this.tv = view as TextView;
                 // HelloWorldModel.applyAttributedText(this.tv!, "whatever");
+
                 this.applySyntaxHighlightedText(
                     this.tv!,
                     `const num = 5;\n\nfunction myFunc(param1){\n\tconsole.log("txt", param1);\n}\n\nmyFunc(num);`,
