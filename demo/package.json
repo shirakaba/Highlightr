@@ -1,6 +1,6 @@
 {
   "nativescript": {
-    "id": "org.nativescript.demo",
+    "id": "uk.co.bottledlogic.nativescript-syntax-highlighter",
     "tns-android": {
       "version": "5.0.0"
     },
@@ -13,12 +13,14 @@
   "license": "SEE LICENSE IN <your-license-filename>",
   "repository": "<fill-your-repository-here>",
   "dependencies": {
+    "nativescript-syntax-highlighter": "../src",
     "nativescript-theme-core": "~1.0.4",
     "tns-core-modules": "~5.0.2"
   },
   "devDependencies": {
     "nativescript-dev-typescript": "~0.7.0",
     "nativescript-dev-webpack": "~0.18.0",
+    "tns-platform-declarations": "^5.0.2",
     "typescript": "^3.1.6"
   },
   "readme": "NativeScript Application"
