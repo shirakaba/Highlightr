@@ -9,5 +9,5 @@ export declare class Highlightr extends NSObject {
 
 	setThemeTo(theme: string): void;
 
-	highlightCodeAs(code: string, lang: "swift"): NSAttributedString;
+	highlightCodeAs(code: string, lang: string): NSAttributedString;
 }
