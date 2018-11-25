@@ -1,4 +1,4 @@
-export declare class Highlightr extends NSObject {
+declare class Highlightr extends NSObject {
 
 	static alloc(): Highlightr; // inherited from NSObject
 
