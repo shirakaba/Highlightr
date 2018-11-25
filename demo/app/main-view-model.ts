@@ -2,10 +2,12 @@ import { Observable } from "tns-core-modules/data/observable";
 import { TextField } from "tns-core-modules/ui/text-field";
 import { TextView } from "tns-core-modules/ui/text-view";
 // import { Highlightr } from "nativescript-syntax-highlighter/typings/objc!Highlightr.d.ts";
-import { SyntaxHighlighter } from "nativescript-syntax-highlighter/syntaxhighlighter.ios.ts";
+import { SyntaxHighlighter } from "nativescript-syntax-highlighter";
+
 
 export class HelloWorldModel extends Observable {
     // private highlightr: Highlightr = Highlightr.alloc().init();
+
     private syntaxHighlighter: SyntaxHighlighter = new SyntaxHighlighter();
     private tv?: TextView;
 

@@ -1,5 +1,5 @@
 export class SyntaxHighlighter {
-	private _highlightr: Highlightr;
+	private _highlightr: any;
 
 	constructor() {
 		this._highlightr = Highlightr.alloc().init();
