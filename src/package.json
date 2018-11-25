@@ -1,5 +1,5 @@
 {
-    "name": "nativescript-highlightr",
+    "name": "nativescript-syntax-highlighter",
     "version": "0.1.0",
     "description": "Highlightr is an iOS & macOS syntax highlighter built with Swift. It uses highlight.js as it core, supports 176 languages and comes with 79 styles.",
     "main": "highlightr",
