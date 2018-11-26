@@ -14,7 +14,8 @@ import JavaScriptCore
 #endif
 
 /// Utility class for generating a highlighted NSAttributedString from a String.
-open class Highlightr
+@objc(Highlightr)
+open class Highlightr: NSObject
 {
     /// Returns the current Theme.
     open var theme : Theme!
@@ -31,9 +32,9 @@ open class Highlightr
     /// Defaults to `false` - when `true`, forces highlighting to finish even if illegal syntax is detected.
     open var ignoreIllegals = false
 
-    private let hljs: JSValue
+    private var hljs: JSValue!
 
-    private let bundle : Bundle
+    private var bundle: Bundle!
     private let htmlStart = "<"
     private let spanStart = "span class=\""
     private let spanStartClose = "\">"
@@ -47,8 +48,10 @@ open class Highlightr
 
      - returns: Highlightr instance.
      */
+    @objc
     public init?(highlightPath: String? = nil)
     {
+        super.init()
         let jsContext = JSContext()!
         let window = JSValue(newObjectIn: jsContext)
         jsContext.setObject(window, forKeyedSubscript: "window" as NSString)
@@ -87,6 +90,7 @@ open class Highlightr
      - returns: true if it was possible to set the given theme, false otherwise
      */
     @discardableResult
+    @objc
     open func setTheme(to name: String) -> Bool
     {
         guard let defTheme = bundle.path(forResource: name+".min", ofType: "css") else
@@ -109,6 +113,7 @@ open class Highlightr
      
      - returns: NSAttributedString with the detected code highlighted.
      */
+    @objc
     open func highlight(_ code: String, as languageName: String? = nil, fastRender: Bool = true) -> NSAttributedString?
     {
         let ret: JSValue
@@ -154,6 +159,7 @@ open class Highlightr
      
      - returns: Array of Strings
      */
+    @objc
     open func availableThemes() -> [String]
     {
         let paths = bundle.paths(forResourcesOfType: "css", inDirectory: nil) as [NSString]
@@ -170,6 +176,7 @@ open class Highlightr
      
      - returns: Array of Strings
      */
+    @objc
     open func supportedLanguages() -> [String]
     {
         let res = hljs.invokeMethod("listLanguages", withArguments: [])
