@@ -34,6 +34,7 @@ import Foundation
 }
 
 /// NSTextStorage subclass. Can be used to dynamically highlight code.
+@objc(CodeAttributedString)
 open class CodeAttributedString : NSTextStorage
 {
     /// Internal Storage
@@ -51,6 +52,7 @@ open class CodeAttributedString : NSTextStorage
      - parameter highlightr: The highlightr instance to use. Defaults to `Highlightr()`.
 
      */
+    @objc
     public init(highlightr: Highlightr = Highlightr()!)
     {
         self.highlightr = highlightr
@@ -59,6 +61,7 @@ open class CodeAttributedString : NSTextStorage
     }
 
     /// Initialize the CodeAttributedString
+    @objc
     public override init() {
         self.highlightr = Highlightr()!
         super.init()
@@ -66,6 +69,7 @@ open class CodeAttributedString : NSTextStorage
     }
     
     /// Initialize the CodeAttributedString
+    @objc
     required public init?(coder aDecoder: NSCoder)
     {
         self.highlightr = Highlightr()!
@@ -75,6 +79,7 @@ open class CodeAttributedString : NSTextStorage
     
     #if os(OSX)
     /// Initialize the CodeAttributedString
+    @objc
     required public init?(pasteboardPropertyList propertyList: Any, ofType type: NSPasteboard.PasteboardType)
     {
         self.highlightr = Highlightr()!
@@ -84,6 +89,7 @@ open class CodeAttributedString : NSTextStorage
     #endif
     
     /// Language syntax to use for highlighting. Providing nil will disable highlighting.
+    @objc
     open var language : String?
     {
         didSet
@@ -93,6 +99,7 @@ open class CodeAttributedString : NSTextStorage
     }
     
     /// Returns a standard String based on the current one.
+    @objc
     open override var string: String
     {
         get
@@ -109,6 +116,7 @@ open class CodeAttributedString : NSTextStorage
      
      - returns: Attributes
      */
+    @objc
     open override func attributes(at location: Int, effectiveRange range: NSRangePointer?) -> [AttributedStringKey : Any]
     {
         return stringStorage.attributes(at: location, effectiveRange: range)
@@ -120,6 +128,7 @@ open class CodeAttributedString : NSTextStorage
      - parameter range: NSRange
      - parameter str:   String
      */
+    @objc
     open override func replaceCharacters(in range: NSRange, with str: String)
     {
         stringStorage.replaceCharacters(in: range, with: str)
@@ -132,6 +141,7 @@ open class CodeAttributedString : NSTextStorage
      - parameter attrs: [String : AnyObject]
      - parameter range: NSRange
      */
+    @objc
     open override func setAttributes(_ attrs: [AttributedStringKey : Any]?, range: NSRange)
     {
         stringStorage.setAttributes(attrs, range: range)
@@ -139,6 +149,7 @@ open class CodeAttributedString : NSTextStorage
     }
     
     /// Called internally everytime the string is modified.
+    @objc
     open override func processEditing()
     {
         super.processEditing()
@@ -152,7 +163,8 @@ open class CodeAttributedString : NSTextStorage
         }
     }
 
-    func highlight(_ range: NSRange)
+    @objc
+    public func highlight(_ range: NSRange)
     {
         if(language == nil)
         {
@@ -204,7 +216,8 @@ open class CodeAttributedString : NSTextStorage
         
     }
     
-    func setupListeners()
+    @objc
+    public func setupListeners()
     {
         highlightr.themeChanged =
             { _ in
