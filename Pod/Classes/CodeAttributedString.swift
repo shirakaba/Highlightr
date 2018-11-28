@@ -41,6 +41,7 @@ open class CodeAttributedString : NSTextStorage
     let stringStorage = NSTextStorage()
 
     /// Highlightr instace used internally for highlighting. Use this for configuring the theme.
+    @objc
     public let highlightr: Highlightr
     
     /// This object will be notified before and after the highlighting.
