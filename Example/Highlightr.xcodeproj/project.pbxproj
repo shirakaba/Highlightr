@@ -210,7 +210,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				91E58AC425EA774EFA9EE9EE /* [CP] Embed Pods Frameworks */,
-				AECC48C4F1DD6213B3CA864B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,7 +247,6 @@
 				8C9564231CE79E5200C0C7FA /* Frameworks */,
 				8C9564241CE79E5200C0C7FA /* Resources */,
 				99E9E4A243E20636B6862D85 /* [CP] Embed Pods Frameworks */,
-				9762E35CFD423139795C0974 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -393,21 +391,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Highlightr_Example/Pods-Highlightr_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9762E35CFD423139795C0974 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Highlightr_OSX_Example/Pods-Highlightr_OSX_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		99E9E4A243E20636B6862D85 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -424,21 +407,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Highlightr_OSX_Example/Pods-Highlightr_OSX_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AECC48C4F1DD6213B3CA864B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Highlightr_Example/Pods-Highlightr_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
