@@ -26,6 +26,12 @@ open class Highlightr: NSObject
         }
     }
     
+    // Because the 'theme' property itself can't be represented by Obj-C!
+    @objc
+    public func getThemeBackgroundColour() -> UIColor? {
+        return self.theme.themeBackgroundColor
+    }
+    
     /// This block will be called every time the theme changes.
     open var themeChanged : ((Theme) -> Void)?
 
