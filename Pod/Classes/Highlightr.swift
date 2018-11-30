@@ -18,6 +18,7 @@ import JavaScriptCore
 open class Highlightr: NSObject
 {
     /// Returns the current Theme.
+    @objc
     open var theme : Theme!
     {
         didSet
@@ -26,10 +27,15 @@ open class Highlightr: NSObject
         }
     }
     
-    // Because the 'theme' property itself can't be represented by Obj-C!
+    @objc
+    public func getTheme() -> Theme! {
+        return self.theme
+    }
+    
     @objc
     public func getThemeBackgroundColour() -> UIColor? {
-        return self.theme.themeBackgroundColor
+        guard let theme = self.theme else { return nil }
+        return theme.themeBackgroundColor
     }
     
     /// This block will be called every time the theme changes.

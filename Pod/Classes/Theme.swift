@@ -26,9 +26,10 @@ import Foundation
 private typealias RPThemeDict = [String: [AnyHashable: AnyObject]]
 private typealias RPThemeStringDict = [String:[String:String]]
 
-/// Theme parser, can be used to configure the theme parameters. 
-open class Theme {
-    internal let theme : String
+/// Theme parser, can be used to configure the theme parameters.
+@objc(Theme)
+open class Theme: NSObject {
+    internal var theme : String!
     internal var lightTheme : String!
     
     /// Regular font to be used by this theme
@@ -42,6 +43,7 @@ open class Theme {
     private var strippedTheme : RPThemeStringDict!
     
     /// Default background color for the current theme.
+    @objc
     open var themeBackgroundColor : RPColor!
     
     /**
@@ -51,6 +53,7 @@ open class Theme {
      */
     init(themeString: String)
     {
+        super.init()
         theme = themeString
         setCodeFont(RPFont(name: "Courier", size: 14)!)
         strippedTheme = stripTheme(themeString)
