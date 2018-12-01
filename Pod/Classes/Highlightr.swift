@@ -28,6 +28,9 @@ open class Highlightr: NSObject
     }
     
     @objc
+    public weak var associatedTextView: UITextView?
+    
+    @objc
     public func getTheme() -> Theme! {
         return self.theme
     }
@@ -112,6 +115,9 @@ open class Highlightr: NSObject
         let themeString = try! String.init(contentsOfFile: defTheme)
         theme =  Theme(themeString: themeString)
 
+        if let atv = associatedTextView {
+            atv.backgroundColor = theme?.themeBackgroundColor
+        }
         
         return true
     }
